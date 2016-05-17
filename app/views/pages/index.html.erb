@@ -1,2 +1,156 @@
-<h1>Pages#index</h1>
-<p>Find me in app/views/pages/index.html.erb</p>
+
+<!DOCTYPE html>
+<html lang="es">
+<head >
+	<meta charset="UTF-8">
+	<title>Submenús con CSS</title>
+	<style>
+		html {
+			font-size: 16px;
+			font-family: sans-serif;
+		}
+	.header { 
+			position: fixed;
+			z-index: 999;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 4.5rem;
+			background-color: #222;
+			color: #FFF;
+		}
+		.menu {
+			background-color: #000;
+			color: greenyellow;
+			padding: 1rem;
+			display: inline;
+		}
+
+		.menu > li {
+			position: relative;
+			display: inline;
+			padding: 1rem;
+			list-style-type: none;
+			transition: all .25s ease-out;
+		}
+
+		.menu > li:hover {
+			background-color: greenyellow;
+			color: #000;
+			cursor: pointer;
+		}
+
+		.submenu {
+			position: absolute;
+			top: 3rem;
+			left: 1rem;
+			/* display: none; */
+			padding: 1rem;
+			list-style-type: none;
+			background-color: #000;
+			color: greenyellow;
+			visibility: hidden;
+			transition: all 1s ease-out;
+			opacity: 0;
+		}
+
+
+		.menu > li:hover > .submenu {
+			/* display: block; */
+			visibility: visible;
+			opacity: 1;
+		}
+
+		.submenu > li {
+			padding: 1rem;
+			transition: all .25s ease-out;
+		}
+
+		.submenu > li:hover {
+			background-color: greenyellow;
+			color: #000;
+		}
+input[type=search] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -o-appearance: none;
+    height: 30px;
+    width: 200px;
+    background: #CCC;
+    color: orangered;
+}
+* {
+    margin:0;
+    padding:0;
+    font:12pt Arial;
+}
+
+body {
+  background-color:#34495e;
+}
+
+.field {
+  display:flex;
+  position:realtive;
+  margin:5em auto;
+  width:70%;
+  flex-direction:row;
+  box-shadow:
+   1px 1px 0 rgb(22, 160, 133),
+   2px 2px 0 rgb(22, 160, 133),
+   3px 3px 0 rgb(22, 160, 133),
+   4px 4px 0 rgb(22, 160, 133),
+   5px 5px 0 rgb(22, 160, 133),
+   6px 6px 0 rgb(22, 160, 133),
+   7px 7px 0 rgb(22, 160, 133)
+  ;
+}
+
+.field>input[type=text],
+.field>button {
+  display:block;
+  font:1.2em 'Montserrat Alternates';
+}
+
+.field>input[type=text] {
+  flex:1;
+  padding:0.6em;
+  border:0.2em solid rgb(26, 188, 156);
+}
+
+.field>button {
+  padding:0.6em 0.8em;
+  background-color:rgb(26, 188, 156);
+  color:white;
+  border:none;
+}
+	</style>
+</head>
+<body>
+	<header>
+	
+	</header>    
+	<h1></h1>
+	
+        <article class="content">
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        </article>
+        <article class="content">
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        <p> </p>
+        </article>        
+	    <article class="content">
+	        <h2>.</h2>
+            <div class="field" id="searchform">
+              <input type="text" id="searchterm" placeholder="what are you searching for?" />
+              <button type="button" id="search">Find!</button>
+            </div>				
+		</article>	
+</body>
+</html>
