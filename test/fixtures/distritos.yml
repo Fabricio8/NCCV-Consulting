@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cod_distrito: 1
+  nom_distrito: MyString
+  departamento_id: 
+
+two:
+  cod_distrito: 1
+  nom_distrito: MyString
+  departamento_id: 

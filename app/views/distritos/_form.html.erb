@@ -1,0 +1,45 @@
+<%= form_for @distrito, :html => { :class => "form-horizontal distrito" } do |f| %>
+
+    <% if @distrito.errors.any? %>
+    <div id="error_expl" class="panel panel-danger">
+      <div class="panel-heading">
+        <h3 class="panel-title"><%= pluralize(@distrito.errors.count, "error") %> prohibited this distrito from being saved:</h3>
+      </div>
+      <div class="panel-body">
+        <ul>
+        <% @distrito.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+        </ul>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="control-group">
+    <%= f.label :cod_distrito, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :cod_distrito, :class => 'form-control' %>
+    </div>
+    <%= error_span(@distrito[:cod_distrito]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :nom_distrito, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :nom_distrito, :class => 'form-control' %>
+    </div>
+    <%= error_span(@distrito[:nom_distrito]) %>
+  </div>
+  <div class="control-group">
+    <%= f.label :departamento_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_field :departamento_id, :class => 'form-control' %>
+    </div>
+    <%= error_span(@distrito[:departamento_id]) %>
+  </div>
+
+
+  <%= f.submit nil, :class => 'btn btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+            distritos_path, :class => 'btn btn-default' %>
+
+<% end %>
