@@ -30,5 +30,12 @@ ActiveRecord::Schema.define(version: 20160521210933) do
 
   add_index "distritos", ["departamento_id"], name: "index_distritos_on_departamento_id", using: :btree
 
+  create_table "prueba", id: false, force: :cascade do |t|
+    t.integer "id",        limit: 4
+    t.string  "lastname",  limit: 30
+    t.string  "firstname", limit: 30
+    t.string  "obs",       limit: 100
+  end
+
   add_foreign_key "distritos", "departamentos"
 end
