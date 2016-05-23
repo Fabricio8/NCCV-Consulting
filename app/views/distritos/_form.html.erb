@@ -29,14 +29,23 @@
     </div>
     <%= error_span(@distrito[:nom_distrito]) %>
   </div>
+  
   <div class="control-group">
+    <!--Código Ivargas 22/05/2016 combo relación foranea
+    
+     <!--Fin Código Ivargas 22/05/2016 combo relación foranea-->
     <%= f.label :departamento_id, :class => 'control-label' %>
     <div class="controls">
+      <!--Código Ivargas 22/05/2016 combo relación foranea
+     
+      <!--Fin Código Ivargas 22/05/2016 combo relación foranea-->
       <%= f.text_field :departamento_id, :class => 'form-control' %>
     </div>
     <%= error_span(@distrito[:departamento_id]) %>
   </div>
-
+  
+ 
+ 
 
   <%= f.submit nil, :class => 'btn btn-primary' %>
   <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
