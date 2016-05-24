@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  devise_for :users
+  resources :districts
+  resources :departments
   resources :distritos
   resources :departamentos
   root 'pages#index'
