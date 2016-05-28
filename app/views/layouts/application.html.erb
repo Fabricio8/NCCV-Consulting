@@ -38,7 +38,7 @@
     <%= javascript_include_tag "application" %>
     
   </head>
-  <body>
+  <body align="center" >
 
     <div class="navbar navbar-default navbar-static-top">
       <div class="container">
@@ -65,18 +65,19 @@
       </div>
     </div>    
 
-    <div class="container">
+    <div align="center" class="container">
+      
       <div class="row">
         <div class="col-lg-9">
           <%= bootstrap_flash %>
           <%= yield %>
         </div>
         <div class="col-lg-3">
-          <div class="well sidebar-nav">
+          <!--<div class="well sidebar-nav">
             <h3>Tabla de Contenidos</h3>
             <ul class="nav nav-list">
               <li class="nav-header">Datos Principales</li>
-              <%=render 'layouts/menu'%>
+             
             </ul>
           </div><!--/.well -->
         </div><!--/span-->
