@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :profiles
+  resources :type_users
   devise_for :users
   resources :districts
   resources :departments

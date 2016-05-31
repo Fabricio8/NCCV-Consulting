@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160524010839) do
+ActiveRecord::Schema.define(version: 20160528172457) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string   "codigo_departamento", limit: 255
@@ -45,6 +45,30 @@ ActiveRecord::Schema.define(version: 20160524010839) do
 
   add_index "distritos", ["departamento_id"], name: "index_distritos_on_departamento_id", using: :btree
 
+  create_table "profiles", force: :cascade do |t|
+    t.string   "email",         limit: 255
+    t.string   "Type_profiles", limit: 255
+    t.string   "name",          limit: 255
+    t.string   "Documento",     limit: 255
+    t.string   "addr_user",     limit: 255
+    t.string   "phone",         limit: 255
+    t.integer  "user_id",       limit: 4
+    t.integer  "type_user_id",  limit: 4
+    t.integer  "district_id",   limit: 4
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+  end
+
+  add_index "profiles", ["district_id"], name: "index_profiles_on_district_id", using: :btree
+  add_index "profiles", ["type_user_id"], name: "index_profiles_on_type_user_id", using: :btree
+  add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "type_users", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.datetime "created_at",             null: false
+    t.datetime "updated_at",             null: false
+  end
+
   create_table "users", force: :cascade do |t|
     t.string   "email",                  limit: 255, default: "", null: false
     t.string   "encrypted_password",     limit: 255, default: "", null: false
@@ -65,4 +89,7 @@ ActiveRecord::Schema.define(version: 20160524010839) do
 
   add_foreign_key "districts", "departments"
   add_foreign_key "distritos", "departamentos"
+  add_foreign_key "profiles", "districts"
+  add_foreign_key "profiles", "type_users"
+  add_foreign_key "profiles", "users"
 end
