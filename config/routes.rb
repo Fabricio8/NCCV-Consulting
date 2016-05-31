@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   resources :profiles
   resources :type_users
   devise_for :users
-  resources :districts
+  resources :districts 
   resources :departments
   resources :distritos
   resources :departamentos
@@ -14,6 +14,10 @@ Rails.application.routes.draw do
   get 'pages/contact'
 
   get 'pages/faq'
+  get 'pages/home'
+  
+  
+  post 'districts/search', controller: :districts, action: :search, as: :districts_search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
