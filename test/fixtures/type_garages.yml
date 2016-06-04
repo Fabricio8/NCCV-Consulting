@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  Des_typegarage: MyString
+  no_ceiling: MyString
+  yes_ceiling: MyString
+
+two:
+  Des_typegarage: MyString
+  no_ceiling: MyString
+  yes_ceiling: MyString

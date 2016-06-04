@@ -1,0 +1,40 @@
+<%- model_class = TypeGarage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:Des_typegarage) %></th>
+      <th><%= model_class.human_attribute_name(:no_ceiling) %></th>
+      <th><%= model_class.human_attribute_name(:yes_ceiling) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @type_garages.each do |type_garage| %>
+      <tr>
+        <td><%= link_to type_garage.id, type_garage_path(type_garage) %></td>
+        <td><%= type_garage.Des_typegarage %></td>
+        <td><%= type_garage.no_ceiling %></td>
+        <td><%= type_garage.yes_ceiling %></td>
+        <td><%=l type_garage.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_type_garage_path(type_garage), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      type_garage_path(type_garage),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_type_garage_path,
+            :class => 'btn btn-primary' %>

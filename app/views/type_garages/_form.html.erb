@@ -1,0 +1,12 @@
+<%= simple_form_for @type_garage, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :Des_typegarage %>
+  <%= error_span(@type_garage[:Des_typegarage]) %>
+  <%= f.input :no_ceiling %>
+  <%= error_span(@type_garage[:no_ceiling]) %>
+  <%= f.input :yes_ceiling %>
+  <%= error_span(@type_garage[:yes_ceiling]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                type_garages_path, :class => 'btn btn-default' %>
+<% end %>

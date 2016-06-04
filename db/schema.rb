@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160528172457) do
+ActiveRecord::Schema.define(version: 20160604194919) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string   "codigo_departamento", limit: 255
@@ -62,6 +62,14 @@ ActiveRecord::Schema.define(version: 20160528172457) do
   add_index "profiles", ["district_id"], name: "index_profiles_on_district_id", using: :btree
   add_index "profiles", ["type_user_id"], name: "index_profiles_on_type_user_id", using: :btree
   add_index "profiles", ["user_id"], name: "index_profiles_on_user_id", using: :btree
+
+  create_table "type_garages", force: :cascade do |t|
+    t.string   "Des_typegarage", limit: 255
+    t.string   "no_ceiling",     limit: 255
+    t.string   "yes_ceiling",    limit: 255
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
 
   create_table "type_users", force: :cascade do |t|
     t.string   "name",       limit: 255
