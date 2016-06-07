@@ -1,0 +1,54 @@
+<%- model_class = Garage -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:dimension) %></th>
+      <th><%= model_class.human_attribute_name(:observation) %></th>
+      <th><%= model_class.human_attribute_name(:address) %></th>
+      <th><%= model_class.human_attribute_name(:reference) %></th>
+      <th><%= model_class.human_attribute_name(:location) %></th>
+      <th><%= model_class.human_attribute_name(:latitude) %></th>
+      <th><%= model_class.human_attribute_name(:length) %></th>
+      <th><%= model_class.human_attribute_name(:accuracy) %></th>
+      <th><%= model_class.human_attribute_name(:profile_id) %></th>
+      <th><%= model_class.human_attribute_name(:district_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @garages.each do |garage| %>
+      <tr>
+        <td><%= link_to garage.id, garage_path(garage) %></td>
+        <td><%= garage.dimension %></td>
+        <td><%= garage.observation %></td>
+        <td><%= garage.address %></td>
+        <td><%= garage.reference %></td>
+        <td><%= garage.location %></td>
+        <td><%= garage.latitude %></td>
+        <td><%= garage.length %></td>
+        <td><%= garage.accuracy %></td>
+        <td><%= garage.profile_id %></td>
+        <td><%= garage.district_id %></td>
+        <td><%=l garage.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_garage_path(garage), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      garage_path(garage),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_garage_path,
+            :class => 'btn btn-primary' %>

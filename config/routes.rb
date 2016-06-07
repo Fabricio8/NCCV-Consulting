@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :garages
   resources :rent_types
   resources :type_garages
   resources :profiles

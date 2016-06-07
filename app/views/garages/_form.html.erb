@@ -1,0 +1,28 @@
+<%= simple_form_for @garage, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :dimension %>
+  <%= error_span(@garage[:dimension]) %>
+  <%= f.input :observation %>
+  <%= error_span(@garage[:observation]) %>
+  <%= f.input :address %>
+  <%= error_span(@garage[:address]) %>
+  <%= f.input :reference %>
+  <%= error_span(@garage[:reference]) %>
+  <%= f.input :location %>
+  <%= error_span(@garage[:location]) %>
+  <%= f.input :latitude %>
+  <%= error_span(@garage[:latitude]) %>
+  <%= f.input :length %>
+  <%= error_span(@garage[:length]) %>
+  <%= f.input :accuracy %>
+  <%= error_span(@garage[:accuracy]) %>
+  
+  <%= f.association :profile %>
+  <%= error_span(@garage[:profile_id]) %>
+  
+  <%= f.association :district %>
+  <%= error_span(@garage[:district_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                garages_path, :class => 'btn btn-default' %>
+<% end %>

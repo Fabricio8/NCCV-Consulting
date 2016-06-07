@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607020750) do
+ActiveRecord::Schema.define(version: 20160607023450) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string   "codigo_departamento", limit: 255
@@ -44,6 +44,24 @@ ActiveRecord::Schema.define(version: 20160607020750) do
   end
 
   add_index "distritos", ["departamento_id"], name: "index_distritos_on_departamento_id", using: :btree
+
+  create_table "garages", force: :cascade do |t|
+    t.string   "dimension",   limit: 255
+    t.string   "observation", limit: 255
+    t.string   "address",     limit: 255
+    t.string   "reference",   limit: 255
+    t.string   "location",    limit: 255
+    t.string   "latitude",    limit: 255
+    t.string   "length",      limit: 255
+    t.string   "accuracy",    limit: 255
+    t.integer  "profile_id",  limit: 4
+    t.integer  "district_id", limit: 4
+    t.datetime "created_at",              null: false
+    t.datetime "updated_at",              null: false
+  end
+
+  add_index "garages", ["district_id"], name: "index_garages_on_district_id", using: :btree
+  add_index "garages", ["profile_id"], name: "index_garages_on_profile_id", using: :btree
 
   create_table "profiles", force: :cascade do |t|
     t.string   "email",         limit: 255
@@ -103,6 +121,8 @@ ActiveRecord::Schema.define(version: 20160607020750) do
 
   add_foreign_key "districts", "departments"
   add_foreign_key "distritos", "departamentos"
+  add_foreign_key "garages", "districts"
+  add_foreign_key "garages", "profiles"
   add_foreign_key "profiles", "districts"
   add_foreign_key "profiles", "type_users"
   add_foreign_key "profiles", "users"
