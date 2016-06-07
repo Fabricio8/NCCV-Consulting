@@ -1,0 +1,8 @@
+<%= simple_form_for @rent_type, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@rent_type[:name]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                rent_types_path, :class => 'btn btn-default' %>
+<% end %>
