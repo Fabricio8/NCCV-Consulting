@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :rentings
+  resources :garages
   resources :garages
   resources :rent_types
   resources :type_garages

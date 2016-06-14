@@ -1,4 +1,6 @@
 <%= simple_form_for @garage, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@garage[:name]) %>
   <%= f.input :dimension %>
   <%= error_span(@garage[:dimension]) %>
   <%= f.input :observation %>
@@ -15,11 +17,9 @@
   <%= error_span(@garage[:length]) %>
   <%= f.input :accuracy %>
   <%= error_span(@garage[:accuracy]) %>
-  
-  <%= f.association :profile %>
+  <%= f.input :profile_id %>
   <%= error_span(@garage[:profile_id]) %>
-  
-  <%= f.association :district %>
+  <%= f.input :district_id %>
   <%= error_span(@garage[:district_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
