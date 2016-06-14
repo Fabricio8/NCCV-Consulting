@@ -87,6 +87,39 @@ ActiveRecord::Schema.define(version: 20160607023450) do
     t.datetime "updated_at",             null: false
   end
 
+  create_table "transaction_offers", force: :cascade do |t|
+    t.integer  "renting_id",       limit: 4
+    t.integer  "profile_id",       limit: 4
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "star_hour"
+    t.time     "end_hour"
+    t.integer  "hours_quantity",   limit: 4
+    t.date     "transaction_date"
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
+  end
+
+  add_index "transaction_offers", ["profile_id"], name: "index_transaction_offers_on_profile_id", using: :btree
+  add_index "transaction_offers", ["renting_id"], name: "index_transaction_offers_on_renting_id", using: :btree
+
+  create_table "transaction_offers1s", force: :cascade do |t|
+    t.integer  "renting_id",       limit: 4
+    t.integer  "profile_id",       limit: 4
+    t.date     "start_date"
+    t.date     "end_date"
+    t.time     "star_hour"
+    t.time     "end_hour"
+    t.integer  "hours_quantity",   limit: 4
+    t.date     "transaction_date"
+    t.float    "cost",             limit: 24
+    t.datetime "created_at",                  null: false
+    t.datetime "updated_at",                  null: false
+  end
+
+  add_index "transaction_offers1s", ["profile_id"], name: "index_transaction_offers1s_on_profile_id", using: :btree
+  add_index "transaction_offers1s", ["renting_id"], name: "index_transaction_offers1s_on_renting_id", using: :btree
+
   create_table "type_garages", force: :cascade do |t|
     t.string   "Des_typegarage", limit: 255
     t.string   "no_ceiling",     limit: 255
