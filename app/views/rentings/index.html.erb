@@ -1,0 +1,50 @@
+<%- model_class = Renting -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.pluralize.titleize %></h1>
+</div>
+<table class="table table-striped">
+  <thead>
+    <tr>
+      <th><%= model_class.human_attribute_name(:id) %></th>
+      <th><%= model_class.human_attribute_name(:name) %></th>
+      <th><%= model_class.human_attribute_name(:cost) %></th>
+      <th><%= model_class.human_attribute_name(:start_date) %></th>
+      <th><%= model_class.human_attribute_name(:end_date) %></th>
+      <th><%= model_class.human_attribute_name(:state) %></th>
+      <th><%= model_class.human_attribute_name(:start_hour) %></th>
+      <th><%= model_class.human_attribute_name(:end_hour) %></th>
+      <th><%= model_class.human_attribute_name(:garage_id) %></th>
+      <th><%= model_class.human_attribute_name(:created_at) %></th>
+      <th><%=t '.actions', :default => t("helpers.actions") %></th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @rentings.each do |renting| %>
+      <tr>
+        <td><%= link_to renting.id, renting_path(renting) %></td>
+        <td><%= renting.name %></td>
+        <td><%= renting.cost %></td>
+        <td><%= renting.start_date %></td>
+        <td><%= renting.end_date %></td>
+        <td><%= renting.state %></td>
+        <td><%= renting.start_hour %></td>
+        <td><%= renting.end_hour %></td>
+        <td><%= renting.garage_id %></td>
+        <td><%=l renting.created_at %></td>
+        <td>
+          <%= link_to t('.edit', :default => t("helpers.links.edit")),
+                      edit_renting_path(renting), :class => 'btn btn-default btn-xs' %>
+          <%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+                      renting_path(renting),
+                      :method => :delete,
+                      :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+                      :class => 'btn btn-xs btn-danger' %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= link_to t('.new', :default => t("helpers.links.new")),
+            new_renting_path,
+            :class => 'btn btn-primary' %>

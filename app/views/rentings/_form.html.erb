@@ -1,0 +1,22 @@
+<%= simple_form_for @renting, :html => { :class => 'form-horizontal' } do |f| %>
+  <%= f.input :name %>
+  <%= error_span(@renting[:name]) %>
+  <%= f.input :cost %>
+  <%= error_span(@renting[:cost]) %>
+  <%= f.input :start_date %>
+  <%= error_span(@renting[:start_date]) %>
+  <%= f.input :end_date %>
+  <%= error_span(@renting[:end_date]) %>
+  <%= f.input :state %>
+  <%= error_span(@renting[:state]) %>
+  <%= f.input :start_hour %>
+  <%= error_span(@renting[:start_hour]) %>
+  <%= f.input :end_hour %>
+  <%= error_span(@renting[:end_hour]) %>
+  <%= f.association :garage %>
+  <%= error_span(@renting[:garage_id]) %>
+
+  <%= f.button :submit, :class => 'btn-primary' %>
+  <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                rentings_path, :class => 'btn btn-default' %>
+<% end %>

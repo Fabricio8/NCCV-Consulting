@@ -18,7 +18,7 @@ class GaragesControllerTest < ActionController::TestCase
 
   test "should create garage" do
     assert_difference('Garage.count') do
-      post :create, garage: { accuracy: @garage.accuracy, address: @garage.address, dimension: @garage.dimension, district_id: @garage.district_id, latitude: @garage.latitude, length: @garage.length, location: @garage.location, observation: @garage.observation, profile_id: @garage.profile_id, reference: @garage.reference }
+      post :create, garage: { accuracy: @garage.accuracy, address: @garage.address, dimension: @garage.dimension, district_id: @garage.district_id, latitude: @garage.latitude, length: @garage.length, location: @garage.location, name: @garage.name, observation: @garage.observation, profile_id: @garage.profile_id, reference: @garage.reference }
     end
 
     assert_redirected_to garage_path(assigns(:garage))
@@ -35,7 +35,7 @@ class GaragesControllerTest < ActionController::TestCase
   end
 
   test "should update garage" do
-    patch :update, id: @garage, garage: { accuracy: @garage.accuracy, address: @garage.address, dimension: @garage.dimension, district_id: @garage.district_id, latitude: @garage.latitude, length: @garage.length, location: @garage.location, observation: @garage.observation, profile_id: @garage.profile_id, reference: @garage.reference }
+    patch :update, id: @garage, garage: { accuracy: @garage.accuracy, address: @garage.address, dimension: @garage.dimension, district_id: @garage.district_id, latitude: @garage.latitude, length: @garage.length, location: @garage.location, name: @garage.name, observation: @garage.observation, profile_id: @garage.profile_id, reference: @garage.reference }
     assert_redirected_to garage_path(assigns(:garage))
   end
 

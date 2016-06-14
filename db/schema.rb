@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160607023450) do
+ActiveRecord::Schema.define(version: 20160614030655) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string   "codigo_departamento", limit: 255
@@ -46,6 +46,7 @@ ActiveRecord::Schema.define(version: 20160607023450) do
   add_index "distritos", ["departamento_id"], name: "index_distritos_on_departamento_id", using: :btree
 
   create_table "garages", force: :cascade do |t|
+    t.string   "name",        limit: 255
     t.string   "dimension",   limit: 255
     t.string   "observation", limit: 255
     t.string   "address",     limit: 255
@@ -87,6 +88,7 @@ ActiveRecord::Schema.define(version: 20160607023450) do
     t.datetime "updated_at",             null: false
   end
 
+<<<<<<< HEAD
   create_table "transaction_offers", force: :cascade do |t|
     t.integer  "renting_id",       limit: 4
     t.integer  "profile_id",       limit: 4
@@ -119,6 +121,22 @@ ActiveRecord::Schema.define(version: 20160607023450) do
 
   add_index "transaction_offers1s", ["profile_id"], name: "index_transaction_offers1s_on_profile_id", using: :btree
   add_index "transaction_offers1s", ["renting_id"], name: "index_transaction_offers1s_on_renting_id", using: :btree
+=======
+  create_table "rentings", force: :cascade do |t|
+    t.string   "name",       limit: 255
+    t.decimal  "cost",                   precision: 10
+    t.date     "start_date"
+    t.date     "end_date"
+    t.integer  "state",      limit: 4
+    t.datetime "start_hour"
+    t.datetime "end_hour"
+    t.integer  "garage_id",  limit: 4
+    t.datetime "created_at",                            null: false
+    t.datetime "updated_at",                            null: false
+  end
+
+  add_index "rentings", ["garage_id"], name: "index_rentings_on_garage_id", using: :btree
+>>>>>>> 06fcfb64c1b5fd913cdbbb4a4bc6c41817168e19
 
   create_table "type_garages", force: :cascade do |t|
     t.string   "Des_typegarage", limit: 255
@@ -159,4 +177,5 @@ ActiveRecord::Schema.define(version: 20160607023450) do
   add_foreign_key "profiles", "districts"
   add_foreign_key "profiles", "type_users"
   add_foreign_key "profiles", "users"
+  add_foreign_key "rentings", "garages"
 end

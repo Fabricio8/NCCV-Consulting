@@ -1,0 +1,33 @@
+<%- model_class = Renting -%>
+<div class="page-header">
+  <h1><%=t '.title', :default => model_class.model_name.human.titleize %></h1>
+</div>
+
+<dl class="dl-horizontal">
+  <dt><strong><%= model_class.human_attribute_name(:name) %>:</strong></dt>
+  <dd><%= @renting.name %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:cost) %>:</strong></dt>
+  <dd><%= @renting.cost %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_date) %>:</strong></dt>
+  <dd><%= @renting.start_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_date) %>:</strong></dt>
+  <dd><%= @renting.end_date %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:state) %>:</strong></dt>
+  <dd><%= @renting.state %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:start_hour) %>:</strong></dt>
+  <dd><%= @renting.start_hour %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:end_hour) %>:</strong></dt>
+  <dd><%= @renting.end_hour %></dd>
+  <dt><strong><%= model_class.human_attribute_name(:garage_id) %>:</strong></dt>
+  <dd><%= @renting.garage_id %></dd>
+</dl>
+
+<%= link_to t('.back', :default => t("helpers.links.back")),
+              rentings_path, :class => 'btn btn-default'  %>
+<%= link_to t('.edit', :default => t("helpers.links.edit")),
+              edit_renting_path(@renting), :class => 'btn btn-default' %>
+<%= link_to t('.destroy', :default => t("helpers.links.destroy")),
+              renting_path(@renting),
+              :method => 'delete',
+              :data => { :confirm => t('.confirm', :default => t("helpers.links.confirm", :default => 'Are you sure?')) },
+              :class => 'btn btn-danger' %>

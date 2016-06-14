@@ -69,6 +69,6 @@ class GaragesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def garage_params
-      params.require(:garage).permit(:dimension, :observation, :address, :reference, :location, :latitude, :length, :accuracy, :profile_id, :district_id)
+      params.require(:garage).permit(:name, :dimension, :observation, :address, :reference, :location, :latitude, :length, :accuracy, :profile_id, :district_id)
     end
 end
