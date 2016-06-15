@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615191714) do
+ActiveRecord::Schema.define(version: 20160615212123) do
 
   create_table "departamentos", force: :cascade do |t|
     t.string   "codigo_departamento", limit: 255
@@ -111,10 +111,11 @@ ActiveRecord::Schema.define(version: 20160615191714) do
     t.time     "star_hour"
     t.time     "end_hour"
     t.integer  "hours_quantity",   limit: 4
-    t.decimal  "cost_hour",                  precision: 10
-    t.decimal  "cost_transaction",           precision: 10
-    t.datetime "created_at",                                null: false
-    t.datetime "updated_at",                                null: false
+    t.decimal  "cost_hour",                    precision: 10
+    t.decimal  "cost_transaction",             precision: 10
+    t.string   "car_registration", limit: 255
+    t.datetime "created_at",                                  null: false
+    t.datetime "updated_at",                                  null: false
   end
 
   add_index "transaction_offers", ["profile_id"], name: "index_transaction_offers_on_profile_id", using: :btree
