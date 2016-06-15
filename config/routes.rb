@@ -26,8 +26,12 @@ Rails.application.routes.draw do
   get 'pages/faq'
   get 'pages/home'
   
+  get 'pages/findrenting'
+  
   
   post 'districts/search', controller: :districts, action: :search, as: :districts_search
+  
+  post 'transaction_offers/search', controller: :transaction_offers, action: :search, as: :transaction_offers_search
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
