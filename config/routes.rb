@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  resources :transaction_offers
+  resources :transaction_offers
+  resources :transaction_offers
+  resources :transaction_offers
+  resources :transaction_offers
   resources :rentings
   resources :garages
   resources :garages

@@ -17,9 +17,9 @@
   <%= error_span(@garage[:length]) %>
   <%= f.input :accuracy %>
   <%= error_span(@garage[:accuracy]) %>
-  <%= f.input :profile_id %>
+  <%= f.association :profile %>
   <%= error_span(@garage[:profile_id]) %>
-  <%= f.input :district_id %>
+  <%= f.association :district %>
   <%= error_span(@garage[:district_id]) %>
 
   <%= f.button :submit, :class => 'btn-primary' %>
