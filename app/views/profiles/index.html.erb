@@ -7,12 +7,12 @@
     <tr>
       <th><%= model_class.human_attribute_name(:id) %></th>
       <th><%= model_class.human_attribute_name(:email) %></th>
-      <th><%= model_class.human_attribute_name(:Type_profiles) %></th>
+      <!--<th>%= model_class.human_attribute_name(:Type_profiles) %></th>-->
       <th><%= model_class.human_attribute_name(:name) %></th>
       <th><%= model_class.human_attribute_name(:Documento) %></th>
       <th><%= model_class.human_attribute_name(:addr_user) %></th>
       <th><%= model_class.human_attribute_name(:phone) %></th>
-      <th><%= model_class.human_attribute_name(:user_id) %></th>
+      <!--<th>%= model_class.human_attribute_name(:user_id) %></th>-->
       <th><%= model_class.human_attribute_name(:type_user_id) %></th>
       <th><%= model_class.human_attribute_name(:district_id) %></th>
       <th><%= model_class.human_attribute_name(:created_at) %></th>
@@ -24,12 +24,12 @@
       <tr>
         <td><%= link_to profile.id, profile_path(profile) %></td>
         <td><%= profile.email %></td>
-        <td><%= profile.Type_profiles %></td>
+        <!--td%= profile.Type_profiles %></td>-->
         <td><%= profile.name %></td>
         <td><%= profile.Documento %></td>
         <td><%= profile.addr_user %></td>
         <td><%= profile.phone %></td>
-        <td><%= profile.user_id %></td>
+        <!--<td>%= profile.user_id %></td>-->
         <td><%= profile.type_user_id %></td>
         <td><%= profile.district_id %></td>
         <td><%=l profile.created_at %></td>
